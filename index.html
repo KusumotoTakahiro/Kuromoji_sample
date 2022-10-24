@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kuromoji.js demo page</title>
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+            crossorigin="anonymous"
+        >
+    </head>
+    <body class="d-flex flex-column align-items-center">
+        <h2 class="alert alert-info my-3 container-fluid text-center" role="alert">
+            Kuromoji.js デモ画面
+        </h2>
+        <h5>何か文章を入力してください</h5>
+        <textarea id="text" cols="100" rows="10"></textarea>
+        <button 
+            type="button" 
+            class="
+                btn 
+                btn-outline-primary 
+                btn-lg
+                mx-5
+                my-5 
+            " 
+            onClick="analysis();" 
+        >形態素解析を行う</button>
+        <div class="table-responsive" style="width: 60%">
+            <table class="table table-striped table-hover table-bordered text-center" >
+            <thead> 
+                <tr>
+                    <th>word_id</th>
+                    <th>word_type</th>
+                    <th>word_position</th>
+                    <th>surface_form</th>
+                    <th>pos</th>
+                </tr>
+            </thead>
+            <tbody id="final_results"></tbody>
+            </table>
+        </div>
+        <script src="./kuromoji.js"></script>
+        <script src="./main.js"></script>
+    </body>
+</html>
