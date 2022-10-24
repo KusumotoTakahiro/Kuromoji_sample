@@ -2,7 +2,7 @@ const DICT_PATH = "./dict";
 
 async function analysis() {
 	const text = await getText();
-	kuro(text).then(results=>{
+	tokenize(text).then(results=>{
 		console.log(results);
 		results.forEach(result=> {
 			createTbody(result);
@@ -11,12 +11,12 @@ async function analysis() {
 	
 }
 
-async function kuro(text) {
+function tokenize(text) {
 	const results = [];
 	const result = {};
-	await kuromoji.builder({dicPath: DICT_PATH}).build((err, tokenizer)=>{
-		if (err) console.log(err);
-		const tokens = tokenizer.tokenize(text);// 解析データの取得
+	getTokenizer().then(tokenizer=> {
+		const tokens = tokenizer.tokenize(text);
+		console.log(tokens);
 		tokens.forEach((token)=>{// 解析結果を順番に取得する
 			result.word_id = token.word_id;
 			result.word_type = token.word_type;
@@ -25,8 +25,17 @@ async function kuro(text) {
 			result.pos = token.pos;
 			results.push(result);
 		});
-	});
-	return results;
+		return results;
+	})
+}
+
+function getTokenizer() {
+	return new Promise((resolve, reject) => {
+		kuromoji.builder({dicPath: DICT_PATH}).build((err, tokenizer)=>{
+			if (err) console.log(err);
+			resolve(tokenizer);
+		});
+	})
 }
 
 async function getText() {
