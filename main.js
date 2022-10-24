@@ -2,7 +2,8 @@ const DICT_PATH = "./dict";
 
 async function analysis() {
 	const text = await getText();
-	getTokenizer.then( tokenizer=>{
+	getTokenizer()
+	.then(tokenizer=>{
 		const tokens = tokenizer.tokenize(text);
 		console.log(tokens);
 		return tokens;
