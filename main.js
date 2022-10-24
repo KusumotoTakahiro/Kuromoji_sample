@@ -17,6 +17,8 @@ async function kuro(text) {
 		if (err) console.log(err);
 		const tokens = tokenizer.tokenize(text);// 解析データの取得
 		tokens.forEach((token)=>{// 解析結果を順番に取得する
+			console.log(token);
+			console.log(token.word_id);
 			result.word_id = token.word_id;
 			result.word_type = token.word_type;
 			result.word_position = token.word_position;
