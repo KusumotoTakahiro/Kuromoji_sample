@@ -5,20 +5,22 @@ async function analysis() {
 	getTokenizer()
 	.then(tokenizer=>{
 		const tokens = tokenizer.tokenize(text);
-		console.log(tokens);
+		//console.log(tokens);
 		return Promise.resolve(tokens);
 	})
 	.then(tokens => {
 		let results = [];
 		let result = {};
-		tokens.forEach((token)=>{// 解析結果を順番に取得する
+		// 解析結果を順番に取得する
+		for (let i=0; i < tokens.length; i++) {
+			let token = tokens[i];
 			result.word_id = token.word_id;
 			result.word_type = token.word_type;
 			result.word_position = token.word_position;
 			result.surface_form = token.surface_form;
 			result.pos = token.pos;
 			results.push(result);
-		});
+		}
 		return Promise.resolve(results);
 	})
 	.catch(()=>{
