@@ -22,7 +22,9 @@ async function analysis() {
 		return Promise.resolve(results);
 	})
 	.catch(()=>{
-		console.log('tokensの取得失敗');
+		let msg = 'tokensの取得失敗';
+		console.log(msg);
+		document.getElementById('err-msg').innerHTML(msg);
 	})
 	.then(results=>{
 		for (let i=0; i < results.length; i++){
@@ -31,7 +33,9 @@ async function analysis() {
 		}
 	})
 	.catch(()=>{
-		console.log('resultsの取得失敗')
+		let msg = 'resultsの取得失敗';
+		console.log(msg);
+		document.getElementById('err-msg').innerHTML(msg);
 	})
 }
 
