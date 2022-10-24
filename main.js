@@ -2,21 +2,14 @@ const DICT_PATH = "./dict";
 
 async function analysis() {
 	const text = await getText();
-	tokenize(text).then(results=>{
-		console.log(results);
-		results.forEach(result=> {
-			createTbody(result);
-		})
-	});
-	
-}
-
-function tokenize(text) {
-	const results = [];
-	const result = {};
-	getTokenizer().then(tokenizer=> {
+	getTokenizer.then( tokenizer=>{
 		const tokens = tokenizer.tokenize(text);
 		console.log(tokens);
+		return tokens;
+	})
+	.then(tokens => {
+		let results = [];
+		let result = {};
 		tokens.forEach((token)=>{// 解析結果を順番に取得する
 			result.word_id = token.word_id;
 			result.word_type = token.word_type;
@@ -26,6 +19,17 @@ function tokenize(text) {
 			results.push(result);
 		});
 		return results;
+	})
+	.catch(()=>{
+		console.log('tokensの取得失敗');
+	})
+	.thne(results=>{
+		results.forEach(result=> {
+			createTbody(result);
+		})
+	})
+	.catch(()=>{
+		console.log('resultsの取得失敗')
 	})
 }
 
