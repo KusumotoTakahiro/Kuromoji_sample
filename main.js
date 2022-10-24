@@ -24,7 +24,7 @@ async function analysis() {
 	.catch(()=>{
 		console.log('tokensの取得失敗');
 	})
-	.thne(results=>{
+	.then(results=>{
 		results.forEach(result=> {
 			createTbody(result);
 		})
