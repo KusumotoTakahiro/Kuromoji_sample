@@ -25,9 +25,10 @@ async function analysis() {
 		console.log('tokensの取得失敗');
 	})
 	.then(results=>{
-		results.forEach(result=> {
-			createTbody(result);
-		})
+		for (let i=0; i < results.length; i++){
+			createTbody(result[i]);
+			console.log(results[i]);
+		}
 	})
 	.catch(()=>{
 		console.log('resultsの取得失敗')
