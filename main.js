@@ -10,17 +10,11 @@ async function analysis() {
 	})
 	.then(tokens => {
 		let results = [];
-		let result = {};
 		// 解析結果を順番に取得する
 		for (let i=0; i < tokens.length; i++) {
 			let token = tokens[i];
 			console.log(token);
-			result.word_id = token.word_id;
-			result.word_type = token.word_type;
-			result.word_position = token.word_position;
-			result.surface_form = token.surface_form;
-			result.pos = token.pos;
-			results.push(result);
+			results.push(token);
 		}
 		return Promise.resolve(results);
 	})
