@@ -26,7 +26,7 @@ async function analysis() {
 	})
 	.then(results=>{
 		for (let i=0; i < results.length; i++){
-			createTbody(result[i]);
+			createTbody(results[i]);
 			console.log(results[i]);
 		}
 	})
