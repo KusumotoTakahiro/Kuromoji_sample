@@ -6,7 +6,7 @@ async function analysis() {
 	.then(tokenizer=>{
 		const tokens = tokenizer.tokenize(text);
 		console.log(tokens);
-		return tokens;
+		return Promise.resolve(tokens);
 	})
 	.then(tokens => {
 		let results = [];
@@ -19,7 +19,7 @@ async function analysis() {
 			result.pos = token.pos;
 			results.push(result);
 		});
-		return results;
+		return Promise.resolve(results);
 	})
 	.catch(()=>{
 		console.log('tokensの取得失敗');
