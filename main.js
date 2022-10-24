@@ -13,7 +13,7 @@ async function analysis() {
 async function kuro(text) {
 	const results = [];
 	const result = {};
-	kuromoji.builder({dicPath: DICT_PATH}).build((err, tokenizer)=>{
+	await kuromoji.builder({dicPath: DICT_PATH}).build((err, tokenizer)=>{
 		if (err) console.log(err);
 		const tokens = tokenizer.tokenize(text);// 解析データの取得
 		tokens.forEach((token)=>{// 解析結果を順番に取得する
