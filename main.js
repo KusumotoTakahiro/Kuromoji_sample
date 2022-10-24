@@ -22,9 +22,11 @@ async function kuro(text) {
 			result.word_position = token.word_position;
 			result.surface_form = token.surface_form;
 			result.pos = token.pos;
+			console.log(result);
 			results.push(result);
 		});
 	});
+	console.log(results);
 	return results;
 }
 
