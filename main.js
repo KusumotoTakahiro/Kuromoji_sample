@@ -13,24 +13,12 @@ async function analysis() {
 		// 解析結果を順番に取得する
 		for (let i=0; i < tokens.length; i++) {
 			let token = tokens[i];
-			console.log(token);
-			results.push(token);
+			createTbody(token);
 		}
 		return Promise.resolve(results);
 	})
 	.catch(()=>{
 		let msg = 'tokensの取得失敗';
-		console.log(msg);
-		document.getElementById('err-msg').innerHTML(msg);
-	})
-	.then(results=>{
-		for (let i=0; i < results.length; i++){
-			createTbody(results[i]);
-			console.log(results[i]);
-		}
-	})
-	.catch(()=>{
-		let msg = 'resultsの取得失敗';
 		console.log(msg);
 		document.getElementById('err-msg').innerHTML(msg);
 	})
