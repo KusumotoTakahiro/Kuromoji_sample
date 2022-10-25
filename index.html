@@ -15,7 +15,7 @@
         <h2 class="alert alert-info my-3 container-fluid text-center" role="alert">
             Kuromoji.js デモ画面
         </h2>
-        <div>変更確認-ver-14</div>
+        <!-- <div>変更確認-ver-14</div> -->
         <h5>何か文章を入力してください</h5>
         <textarea id="text" cols="100" rows="10"></textarea>
         <button 
@@ -29,6 +29,17 @@
             " 
             onClick="analysis();" 
         >形態素解析を行う</button>
+        <button 
+            type="button" 
+            class="
+                btn 
+                btn-outline-danger 
+                btn-lg
+                mx-5
+                my-5 
+            " 
+            onClick="clear();" 
+        >画面をクリア</button>
         <h5 id="err-msg"></h5>
         <div class="table-responsive" style="width: 60%">
             <table class="table table-striped table-hover table-bordered text-center" >

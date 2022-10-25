@@ -69,3 +69,10 @@ async function createTbody(text) {
 	tr.appendChild(td5);
 	tbody.appendChild(tr);
 }
+
+function clear() {
+	let parent = document.getElementById('final_results');
+	while (parent.firstChild) {
+		parent.removeChild(parent.firstChild);
+	}
+}
