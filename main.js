@@ -9,7 +9,6 @@ async function analysis() {
 		return Promise.resolve(tokens);
 	})
 	.then(tokens => {
-		let results = [];
 		// 解析結果を順番に取得する
 		let tl = tokens.length;
 		for (let i=0; i < tl; i++) {
@@ -17,7 +16,6 @@ async function analysis() {
 			document.getElementById("myprogess").value = i*100/tl;
 			createTbody(token);
 		}
-		return Promise.resolve(results);
 	})
 	.catch(()=>{
 		let msg = 'tokensの取得失敗';
