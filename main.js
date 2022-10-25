@@ -13,7 +13,7 @@ async function analysis() {
 		let tl = tokens.length;
 		for (let i=0; i < tl; i++) {
 			let token = tokens[i];
-			document.getElementById("myprogress").style.width=i*100/tl;
+			document.getElementById("myprogress").style.width=i*100/tl+"%";
 			createTbody(token);
 		}
 	})
