@@ -14,7 +14,7 @@ async function analysis() {
 		let tl = tokens.length;
 		for (let i=0; i < tl; i++) {
 			let token = tokens[i];
-			document.getElementById("progess").value = i*100/tl;
+			document.getElementById("myprogess").value = i*100/tl;
 			createTbody(token);
 		}
 		return Promise.resolve(results);
