@@ -11,8 +11,10 @@ async function analysis() {
 	.then(tokens => {
 		let results = [];
 		// 解析結果を順番に取得する
-		for (let i=0; i < tokens.length; i++) {
+		let tl = tokens.length;
+		for (let i=0; i < tl; i++) {
 			let token = tokens[i];
+			document.getElementById("progess").value = i*100/tl;
 			createTbody(token);
 		}
 		return Promise.resolve(results);
