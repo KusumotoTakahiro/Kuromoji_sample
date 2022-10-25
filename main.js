@@ -40,21 +40,18 @@ async function getText() {
 async function createTbody(text) {
 	let tbody = document.getElementById('final_results');
 	let tr = document.createElement('tr');
-	let td1 = document.createElement('td');
-	td1.innerHTML = text.word_id;
-	let td2 = document.createElement('td');
-	td2.innerHTML = text.word_type;
-	let td3 = document.createElement('td');
-	td3.innerHTML = text.word_position;
-	let td4 = document.createElement('td');
-	td4.innerHTML = text.surface_form;
-	let td5 = document.createElement('td');
-	td5.innerHTML = text.pos;
-	tr.appendChild(td1);
-	tr.appendChild(td2);
-	tr.appendChild(td3);
-	tr.appendChild(td4);
-	tr.appendChild(td5);
+	let selector = [
+		'word_id', 
+		'word_type', 
+		'word_position',
+		'surface_form',
+		'pos'
+	]
+	for (let i = 0; i < 5; i++) {
+		let td = document.createElement('td');
+		td.innerHTML = text.selector[i];
+		tr.appendChild(td);
+	}
 	tbody.appendChild(tr);
 }
 
