@@ -49,7 +49,7 @@ async function createTbody(text) {
 	]
 	for (let i = 0; i < 5; i++) {
 		let td = document.createElement('td');
-		td.innerHTML = text.selector[i];
+		td.innerHTML = text[selector[i]];
 		tr.appendChild(td);
 	}
 	tbody.appendChild(tr);
