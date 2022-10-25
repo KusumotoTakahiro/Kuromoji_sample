@@ -71,6 +71,7 @@ async function createTbody(text) {
 }
 
 function clear() {
+	console.log('clear methods');
 	let parent = document.getElementById('final_results');
 	while (parent.firstChild) {
 		parent.removeChild(parent.firstChild);
