@@ -22,7 +22,6 @@ async function analysis() {
 	.catch(()=>{
 		let msg = 'tokensの取得失敗';
 		console.log(msg);
-		document.getElementById('err-msg').innerHTML(msg);
 	})
 }
 
