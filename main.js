@@ -70,7 +70,7 @@ async function createTbody(text) {
 	tbody.appendChild(tr);
 }
 
-function clear() {
+function clearTbody() {
 	console.log('clear methods');
 	let parent = document.getElementById('final_results');
 	while (parent.firstChild) {
